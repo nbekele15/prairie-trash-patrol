@@ -1065,29 +1065,29 @@
     </div>
     <div class="form-wrap reveal">
       <div class="form-title">Request a Quote</div>
-      <form class="form-grid" onsubmit="handleSubmit(event)">
+      <form class="form-grid" action="https://formspree.io/f/xykvdpay" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">First Name</label>
-            <input type="text" class="form-input" placeholder="John" required>
+            <input type="text" class="form-input" placeholder="John" name="first_name" required>
           </div>
           <div class="form-group">
             <label class="form-label">Last Name</label>
-            <input type="text" class="form-input" placeholder="Smith">
+            <input type="text" class="form-input" placeholder="Smith" name="last_name">
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="john@company.com" required>
+          <input type="email" class="form-input" placeholder="john@company.com" name="email" required>
         </div>
         <div class="form-group">
           <label class="form-label">Phone</label>
-          <input type="tel" class="form-input" placeholder="(214) 000-0000">
+          <input type="tel" class="form-input" placeholder="(214) 000-0000" name="phone">
         </div>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Project Type</label>
-            <select class="form-select">
+            <select class="form-select" name="project_type">
               <option value="">Select type</option>
               <option>Residential — New Build</option>
               <option>Commercial — Retail</option>
@@ -1099,16 +1099,16 @@
           </div>
           <div class="form-group">
             <label class="form-label">Square Footage</label>
-            <input type="text" class="form-input" placeholder="e.g. 3,500 sqft">
+            <input type="text" class="form-input" placeholder="e.g. 3,500 sqft" name="square_footage">
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Project Location</label>
-          <input type="text" class="form-input" placeholder="Prosper, TX">
+          <input type="text" class="form-input" placeholder="Prosper, TX" name="project_location">
         </div>
         <div class="form-group">
           <label class="form-label">Notes / Timeline</label>
-          <textarea class="form-textarea" placeholder="Any special requirements, phase needed, deadline..."></textarea>
+          <textarea class="form-textarea" placeholder="Any special requirements, phase needed, deadline..." name="notes"></textarea>
         </div>
         <button type="submit" class="btn-submit">Send Request →</button>
       </form>
@@ -1164,18 +1164,6 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Form
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.btn-submit');
-    btn.textContent = '✓ Sent — Noah will be in touch soon';
-    btn.style.background = '#2D5016';
-    setTimeout(() => {
-      btn.textContent = 'Send Request →';
-      btn.style.background = '';
-      e.target.reset();
-    }, 4000);
-  }
 </script>
 </body>
 </html>
